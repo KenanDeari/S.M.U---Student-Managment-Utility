@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Now What?</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <link type="text/css" href="../css/style.css" rel="stylesheet" media="screen">
+  <link href="https://fonts.googleapis.com/css?family=Aldrich" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="vueContainer">
+
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="login-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add a note:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+              <textarea class="form-control" id="noteText" v-model="noteBody" v-on:keyup.enter="saveNote"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="saveNoteButton" type="button"  data-dismiss="modal" @click="saveNote">Save Note</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div id="title">Now What?</div>
+        <p id="subtitle" class="lead">The hub for skill building, jobs, and research in your quest to enter the world
+          of web development.</p>
+      </div>
+    </div>
+
+
+
+    <div class="card">
+      <div class="card-header">
+        <a href="/" id="homeButton" class="btn">
+          ⬅︎ Home
+        </a>
+        <img src="/images/icon-home.png" style="width: 50px" style="height: 50px">
+        {{ notebookName }} Contents
+        <button @click="modalToggle" id="addNoteButton" class="headerButton">Add Note</button>
+      </div>
+      <div class="card-body">
+
+        <div id="notebookContentCard">
+
+          <template v-if="notebookNotes.length">
+            <p class="contentSectionTitle">Notes:</p>
+              <ul>
+              <li class="clearfix"  v-for="note in notebookNotes">
+                <img src="/images/icon-note-render.png" />
+                <div id="noteTextRendered">{{ note.text }}</div>
+                <button class="deleteContentButton" @click="deleteNote(note)">Delete</button>
+              </li>
+            </ul>
+          </template>
+          <div v-if="notebookCourses.length">
+            <p class="contentSectionTitle">Courses:</p>
+            <ul>
+              <li class="clearfix"  v-for="course in notebookCourses">
+                <img  v-bind:src="course.image" />
+                <a target="_blank" v-bind:href="course.link">{{ course.title }}</a>
+                <button class="deleteContentButton" id="course._id" @click="deleteCourse(course)">Delete</button>
+              </li>
+            </ul>
+          </div>
+          <template v-if="notebookVideos.length">
+            <p class="contentSectionTitle">Videos:</p>
+              <ul>
+              <li class="clearfix" v-for="video in notebookVideos">
+                <img  v-bind:src="video.image" />
+                <a target="_blank" v-bind:href="video.link">{{ video.title }}</a>
+                <button class="deleteContentButton" @click="deleteVideo(video)">Delete</button>
+              </li>
+            </ul>
+          </template>
+          <template v-if="notebookArticles.length">
+            <p class="contentSectionTitle">Articles:</p>
+              <ul>
+              <li class="clearfix" v-for="article in notebookArticles">
+                <img  src="/images/article-render.png" />
+                <a target="_blank" v-bind:href="article.link">{{ article.title }}</a>
+                <button class="deleteContentButton" @click="deleteArticle(article)">Delete</button>
+              </li>
+            </ul>
+          </template>
+          <template v-if="notebookEvents.length">
+            <p class="contentSectionTitle">Events:</p>
+              <ul>
+              <li class="clearfix"  v-for="event in notebookEvents">
+                <img  v-bind:src="event.image" />
+                <a target="_blank" v-bind:href="event.link">{{ event.title }}</a>
+                <button class="deleteContentButton" @click="deleteEvent(event)">Delete</button>
+              </li>
+            </ul>
+          </template>
+          <template v-if="notebookJobs.length">
+            <p class="contentSectionTitle">Jobs:</p>
+              <ul>
+              <li class="clearfix"  v-for="job in notebookJobs">
+                <img  v-bind:src="job.image" />
+                <a target="_blank" v-bind:href="job.link">{{ job.title }}</a>
+                <button class="deleteContentButton" @click="deleteJob(job)">Delete</button>
+              </li>
+            </ul>
+          </template>
+          
+
+      </div>
+    </div>
+  </div>
+</div>
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/notebook-logic.js"></script>
+
+</html>
