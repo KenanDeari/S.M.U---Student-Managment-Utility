@@ -1,0 +1,32 @@
+{
+  "name": "now-what",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpiderRam/now-what.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpiderRam/now-what/issues"
+  },
+  "homepage": "https://github.com/SpiderRam/now-what#readme",
+  "dependencies": {
+    "animate.css": "^4.1.0",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.4",
+    "indeed-scraper": "^2.2.0",
+    "mongoose": "^5.9.18",
+    "request": "^2.88.0",
+    "vue-mq": "^0.2.1"
+  }
+}

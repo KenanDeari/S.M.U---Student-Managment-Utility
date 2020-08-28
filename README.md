@@ -1,1 +1,2 @@
-# proj-3
+Student Managment Utility
+
