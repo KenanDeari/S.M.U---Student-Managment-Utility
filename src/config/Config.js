@@ -7,6 +7,6 @@ module.exports.sitesConfig = {
     },
     jooble: {
         url: "https://cors-anywhere.herokuapp.com/https://jooble.org/api/",
-        API_KEY: "b6e3640e-a681-42e0-b9f3-78a773f72d1c"
+        API_KEY: "34852776-0e67-43d5-92f3-87b38f1f01d4"
     }
 }
