@@ -7,10 +7,9 @@ export default function BigJumbo() {
     <div>
       <Jumbotron fluid className="jumbotron">
         <Container>
-          <h1>Get a new job.</h1>
+          <h1>Use This Search Engine to Find Your Next Job!</h1>
           <p>
-            Motto goes here...
-          </p>
+            We curated and scraped jobs from various sites just for you.          </p>
         </Container>
       </Jumbotron>
     </div>
