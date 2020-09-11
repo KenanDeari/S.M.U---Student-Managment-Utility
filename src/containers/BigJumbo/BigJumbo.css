@@ -1,0 +1,12 @@
+.jumbotron {
+  background-image: url("https://pbs.twimg.com/media/C-tqWhYUIAAlvzO.jpg");
+  background-image: fixed, no-repeat;
+}
+
+h1 {
+  color: whitesmoke
+}
+
+p {
+  color: whitesmoke
+}
