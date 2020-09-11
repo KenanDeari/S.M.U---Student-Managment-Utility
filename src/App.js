@@ -1,19 +1,14 @@
-
 import React, { useEffect, useState, useRef } from "react";
 import Config from './config/Config'
 import Header from "./containers/Header/Header";
 import BigJumbo from "./containers/BigJumbo/BigJumbo";
 import SearchJob from "./components/SearchJob/SearchJob";
-// import Notes from "./components/NavbarContainer";
 import JobsList from "./containers/JobsList/JobsList";
 import Footer from "./containers/Footer/Footer"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import { stringify } from "query-string";
 // import axios from "axios";
-const dotenv = require('dotenv').config();
-const API_KEY = process.env.REACT_APP_API_KEY;
-console.log(API_KEY);
 
 export default function App() {
   const baseUrl = {
