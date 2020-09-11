@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, FormControl, Button, InputGroup } from "react-bootstrap";
+const api_key = process.env.REACT_APP_API_KEY;
 
 export default function SearchJob({ updateJobDetail, updateJobTitle, updateJobLocation }) {
   const [job, setJob] = useState({
@@ -15,7 +16,7 @@ export default function SearchJob({ updateJobDetail, updateJobTitle, updateJobLo
   const onChange = e => {
     // setSearch(e.target.value);
     setJob({
-      ...job, [e.target.name] : e.target.value
+      ...job, [e.target.name]: e.target.value
     })
   };
   return (

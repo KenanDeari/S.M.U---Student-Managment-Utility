@@ -4,12 +4,12 @@ import './BigJumbo.css'
 
 export default function BigJumbo() {
   return (
-    <div className="bigjumbo">
+    <div>
       <Jumbotron fluid className="jumbotron">
         <Container>
           <h1>Get a new job.</h1>
           <p>
-            We curated and scraped jobs from various sites just for you.
+            Motto goes here...
           </p>
         </Container>
       </Jumbotron>
