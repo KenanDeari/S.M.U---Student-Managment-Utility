@@ -1,54 +1,54 @@
-//-------------------array for each note block-------------------//
-var Notes = ["Note-1", "Note-2", "Note-3"
-    , "Note-4", "Note-5", "Note-6",];
+$(document).ready(function () {// essentially tells engine to load 1)html & 2)css first.
 
-for (var i = 1; i < Notes.length + 1; i++) {
-    var container = $("<div>");
-    container.attr("class", "container");
+    //Assign saveBtn click listener for user input and time stamp??
+    $(".saveBtn").on("click", function () {
+        //get nearby values.
+        console.log(this);
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
 
-    var row = $("<div>");
-    row.attr("class", "row");
+        //set items in local storage.
+        localStorage.setItem(time, text);
+    })
+    //load any saved data from LocalStorage - do this for each hour created.
+    $("#note1 .description").val(localStorage.getItem("note1"));
+    $("#note2 .description").val(localStorage.getItem("note2"));
+    $("#note3 .description").val(localStorage.getItem("note3"));
+    $("#note4 .description").val(localStorage.getItem("note4"));
+    $("#note5 .description").val(localStorage.getItem("note5"));
+    $("#note6 .description").val(localStorage.getItem("note6"));
 
-    var timeBlock = $("<div>");
-    timeBlock.attr("class", "time-block past bg-secondary");
-    timeBlock.text(Notes[i - 1]);
 
-    //--form for inserted text --//    
-    var textArea = $("<textarea>");
-    textArea.attr("id", "note" + i);
+    function noteTracker() {
 
-    //-----------Save buttons----------------------//
-    var myButton = $("<button>");
-    myButton.attr("id", "saveNote" + i);
-    myButton.attr("class", "saveBtn");
-    myButton.attr("data-id", i);
-    myButton.text("Save");
+        // loop over time blocks
+        $(".note-block").each(function () {
+            var blockHour = parseInt($(this).attr("id").split("hour")[1]);
+            console.log(blockHour)
 
-    row.append(timeBlock, textArea, myButton);
-    container.append(row);
-    $(".appendTo").append(container);
-}
-//--To save inserted text to local Storage after pressing save--//
-$(".appendTo").on("click", ".saveBtn", function () {
-    var notes = $("#note" + $(this).attr("data-id")).val();
-    console.log(notes);
-    localStorage.setItem("Note" + $(this).attr("data-id"), JSON.stringify(notes));
-});
-//----------For Clear Schedule button----------//
+            //check if we've moved past this time
+            if (blockHour) {
+                $(this).addClass("past");
+                $(this).removeClass("future");
+                $(this).removeClass("present");
+            }
+            else if (blockHour) {
+                $(this).removeClass("past");
+                $(this).addClass("present");
+                $(this).removeClass("future");
+            }
+            else {
+                $(this).removeClass("present");
+                $(this).removeClass("past");
+                $(this).addClass("future");
+            }
+        })
+    }
+    noteTracker();
+})
+
+// //----------For Clear Schedule button----------//
 $("#clear").click(function () {
     localStorage.clear();
     location.reload();
 });
-
-//---To display text in text area after refreshing browser---//
-localStorageReturnAndShowOnPage();
-
-function localStorageReturnAndShowOnPage() {
-    for (var j = 1; j < Notes.length + 1; j++) {
-        var localStorageNote = JSON.parse(localStorage.getItem("Note" + j));
-
-        if (localStorageNote !== null) {
-            $("#note" + j).text(localStorageNote);
-        }
-    }
-}
