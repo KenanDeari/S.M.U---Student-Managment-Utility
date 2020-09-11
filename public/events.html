@@ -28,17 +28,39 @@
         ⬅︎
         <img src="./documentation/image-home.png" style="width: 50px" style="height: 50px">
       </a>
+      <Navbar.Brand href="/">Student Managment Utility</Navbar.Brand>
+      <Nav className="mr-auto">
+        <a href="jobs.html">Jobs</a>
+        <a href="events.html">Events</a>
+        <a href="articles.html">Articles</a>
+        <a href="videos.html">Videos</a>
+
+
+      </Nav>
     </div>
   </div>
 
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <div id="title">Student Managment Utility</div>
-      <p id="subtitle" class="lead">Events</p>
+      <div id="title">
+        <h1>Student Management Utility</h1>
+      </div>
+      <p id="subtitle" class="lead">
+      <h2>Events</h2>
+      </p>
     </div>
   </div>
 
-
+  <div class="eca-app-container" data-widgetuuid="76823be2-81b5-4db9-aaad-d549e37f198f"></div>
+  <script>(function () {
+      window.eventCalId = 6776;
+      var integrationScript = document.createElement("script");
+      integrationScript.async = 1;
+      integrationScript.setAttribute("src", "https://api.eventcalendarapp.com/integration-script.js");
+      document.head.appendChild(integrationScript);
+      if (window.eventCalendarAppUtilities) { window.eventCalendarAppUtilities.init("76823be2-81b5-4db9-aaad-d549e37f198f"); }
+    })();
+  </script>
 
 </body>
 
