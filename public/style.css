@@ -23,6 +23,16 @@ body {
     border-radius: 0;
     border-bottom: 10px solid black;
   }
+
+  /* footer css below */
+  footer {
+    margin: auto;
+  }
+
+  /* animate.css custom settings */
+  :root {
+    --animate-duration: 800ms;
+    --animate-delay: 4s;
   
   .description{
     white-space: pre-wrap;

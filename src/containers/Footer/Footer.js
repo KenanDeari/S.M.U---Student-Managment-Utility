@@ -5,8 +5,7 @@ const FooterPagePro = () => {
   return (
     <MDBFooter color="unique-color-white" className="page-footer font-small pt-0">
 
-      < div style={{ backgroundColor: "#26272B", padding: "25px", margin: "20px", }
-      }>
+      < div style={{ backgroundColor: "#E7D197", padding: "25px", margin: "20px", }}>
 
         <MDBContainer className="mt-5 mb-4 text-center text-md-left">
           <MDBRow className="mt-3">

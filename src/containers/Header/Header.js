@@ -5,7 +5,7 @@ import { Navlink } from "react-router-dom";
 export default function Header() {
   return (
 
-    <Navbar bg="dark" variant="dark">
+    <Navbar style={{ color: "red " }} class="navCol" bg="primary" variant="dark">
       <Container>
         <Navbar.Brand href="#home">Student Management Utility</Navbar.Brand>
         <Nav className="mr-auto">
