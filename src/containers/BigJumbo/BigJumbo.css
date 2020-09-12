@@ -1,4 +1,9 @@
 .jumbotron {
+<<<<<<< HEAD
   background-image: url("https://pbs.twimg.com/media/C-tqWhYUIAAlvzO.jpg");
   color: white
+=======
+  color: blue ;
+  background-color: blueviolet;
+>>>>>>> master
 }
