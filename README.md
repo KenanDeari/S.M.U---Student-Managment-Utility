@@ -7,7 +7,7 @@
 
 ## Description 
 
-Student Management Utility is a user friendly site where one can apply to jobs, look for networking events and to continue their education as a web developer. 
+Student Management Utility is a user friendly site where one can apply to jobs, look for networking events and to continue their education as a web developer. Here is a link to the working [application](https://studentmanagementutility.herokuapp.com/videos.html).
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ Student Management Utility is a user friendly site where one can apply to jobs, 
 
 ## Design 
 
-![Screenshot of working application](/)
+![Screenshot of working application](/public/assets/ArticlesTab.png)
 
 ## UserStory
 
