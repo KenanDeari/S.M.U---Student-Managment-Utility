@@ -25,7 +25,7 @@ Student Management Utility is a user friendly site where one can apply to jobs, 
 
 ## Design 
 
-![Screenshot of working application](/public/assets/ArticlesTab.png)
+![Screenshot of working application](https://github.com/KenanDeari/S.M.U---Student-Managment-Utility/blob/master/public/documentation/app_preview.png)
 
 ## UserStory
 
